@@ -317,6 +317,7 @@
     color: var(--red);
     letter-spacing: 0.02em;
   }
+  .fv-bene-num .small-jp.pre { margin-right: 1px; }
   .fv-bene-num .small-jp {
     font-family: var(--font-display);
     font-size: 13px;
@@ -458,7 +459,7 @@
   }
 
   /* ============ SIMULATION ============ */
-  .sim { background: var(--bg-alt); }
+  .sim { background: var(--bg); }
   .sim-card {
     background: white;
     border: 1px solid var(--line);
@@ -558,8 +559,9 @@
   .sim-extra a { color: var(--red); }
 
   /* ============ COUPON ============ */
-  .coupon-section { background: var(--bg); }
+  .coupon-section { background: var(--bg-alt); }
   .coupon-card {
+    background: white;
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 22px 20px;
@@ -673,7 +675,7 @@
   }
 
   /* ============ dポイント ============ */
-  .dpoint { background: var(--bg-alt); }
+  .dpoint { background: var(--bg); }
   .dpoint-list { display: grid; gap: 12px; margin-bottom: 14px; }
   .dpoint-item {
     background: white;
@@ -691,7 +693,7 @@
   .dpoint-item-text { font-size: 13px; color: var(--ink-soft); line-height: 1.9; }
 
   /* ============ アプリ ============ */
-  .apps { background: var(--bg); }
+  .apps { background: var(--bg-alt); }
   .apps-lead {
     font-size: 13px;
     color: var(--ink-soft);
@@ -700,6 +702,7 @@
   }
   .app-cards { display: grid; gap: 12px; margin-bottom: 14px; }
   .app-card {
+    background: white;
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 20px 18px 18px;
@@ -760,6 +763,7 @@
   .app-scene.day .app-scene-tag { background: var(--ink-soft); }
   .app-scene.trip .app-scene-tag { background: var(--charge-dark); }
   .zerokara-card {
+    background: white;
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 24px 20px;
@@ -867,21 +871,17 @@
     margin-top: 12px;
     background: white;
   }
+  .rentacar-head-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .rentacar-icon { width: 40px; height: 40px; flex-shrink: 0; }
   .rentacar-head {
     font-family: var(--font-display);
     font-size: 16px;
     font-weight: 900;
-    margin-bottom: 12px;
-  }
-  .rentacar-head::before {
-    content: '';
-    display: inline-block;
-    width: 4px;
-    height: 16px;
-    background: var(--charge-dark);
-    border-radius: 2px;
-    margin-right: 8px;
-    vertical-align: -2px;
   }
   .rentacar-copy { font-size: 13px; color: var(--ink-soft); line-height: 1.9; }
 
@@ -1359,24 +1359,21 @@
         <span class="fv-bene-sub">映画チケット</span>
       </div>
       <div class="fv-bene-card">
-        <img src="images/karaoke.png" alt="カラオケ" class="fv-bene-icon">
-        <span class="fv-bene-num">30<span class="small-jp">%OFF</span></span>
-        <span class="fv-bene-sub">カラオケ</span>
+        <img src="images/car.png" alt="レンタカー" class="fv-bene-icon">
+        <span class="fv-bene-num"><span class="small-jp pre">最大</span>25<span class="small-jp">%OFF</span></span>
+        <span class="fv-bene-sub">レンタカー</span>
       </div>
       <div class="fv-bene-card">
         <svg class="fv-bene-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <g fill="#e65100">
-            <rect x="6.1" y="4" width="1.8" height="8" rx="0.9"/>
-            <rect x="9.1" y="4" width="1.8" height="8" rx="0.9"/>
-            <rect x="12.1" y="4" width="1.8" height="8" rx="0.9"/>
-            <rect x="6.1" y="10.6" width="7.8" height="2.6" rx="1.3"/>
-            <rect x="9.1" y="12.4" width="1.8" height="15.6" rx="0.9"/>
-            <rect x="19.8" y="4" width="4.6" height="12" rx="2.3"/>
-            <rect x="21.2" y="14.8" width="1.8" height="13.2" rx="0.9"/>
+          <g stroke="#0077b6" stroke-width="1.6" fill="none" stroke-linecap="round">
+            <circle cx="16" cy="13" r="9"/>
+            <path d="M16 4v18M7 13h18M9.6 6.6l12.8 12.8M22.4 6.6L9.6 19.4"/>
+            <path d="M16 13.5L11 28M16 13.5L21 28M10.5 28h11"/>
           </g>
+          <circle cx="16" cy="13" r="2.4" fill="#0077b6"/>
         </svg>
-        <span class="fv-bene-num">10<span class="small-jp">%OFF</span></span>
-        <span class="fv-bene-sub">焼肉・食べ放題</span>
+        <span class="fv-bene-num">200<span class="small-jp">件超</span></span>
+        <span class="fv-bene-sub">レジャー施設</span>
       </div>
     </div>
 
@@ -1430,6 +1427,95 @@
     <p class="battery-line">朝から晩まで外にいる日も、旅行先や出張先でも、<br>これで充電切れの心配なし。</p>
 
     <p class="note">※一部のテーマパーク、スタジアム、大学、医療機関など、通常とは異なる料金が設定されている場所では、使い放題が適用されません。</p>
+  </section>
+
+  <!-- ============ エアトリ ============ -->
+  <section class="airtri" aria-labelledby="airtri-title">
+    <span class="sec-label">旅行・おでかけ</span>
+    <h2 class="sec-title" id="airtri-title">旅行も、帰省も。<br><span class="accent">ここで一気に元が取れる</span></h2>
+
+    <div class="airtri-hero">
+      <div class="airtri-photo-wrap">
+        <img src="images/travel.jpg" alt="空港でスーツケースを引く旅行者" class="airtri-photo">
+      </div>
+      <p class="airtri-amount">エアトリで<span class="num"><span class="jp">最大</span>40,000<span class="jp">円OFF</span></span></p>
+      <div class="airtri-scenes">
+        <span class="airtri-scene">家族旅行</span>
+        <span class="airtri-scene">週末の小旅行</span>
+        <span class="airtri-scene">年末年始の帰省</span>
+      </div>
+      <p class="airtri-copy">国内航空券＋ホテルのセット予約で、ご利用金額に応じて最大40,000円の割引。飛行機に乗る予定が年に1回でもあるなら、それだけで1年分の月額（6,600円）を大きく上回るリターンになります。</p>
+    </div>
+
+    <!-- ▼ 割引ラダー -->
+    <div class="ladder">
+      <p class="ladder-lead">割引額は、購入金額に応じて決まります。</p>
+
+      <div class="ladder-block">
+        <p class="ladder-title">国内航空券＋ホテル</p>
+        <div class="ladder-head">
+          <span>購入金額</span>
+          <span>割引額</span>
+          <!-- 【期間限定】10月以降は class="has-limited" を外し、.lim の中身を削除 -->
+          <span class="lim-head">9月末まで</span>
+        </div>
+        <div class="ladder-row top">
+          <span class="amt">40万円以上</span><span class="off">40,000円OFF</span><span class="lim"></span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">30万円以上</span><span class="off">30,000円OFF</span><span class="lim"></span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">20万円以上</span><span class="off">10,000円OFF</span><span class="lim"></span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">10万円以上</span><span class="off">3,000円OFF</span><span class="lim">6,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">10万円未満</span><span class="off">2,000円OFF</span><span class="lim">4,000円OFF</span>
+        </div>
+      </div>
+
+      <div class="ladder-block">
+        <p class="ladder-title">国内ホテル</p>
+        <div class="ladder-head">
+          <span>購入金額</span>
+          <span>割引額</span>
+          <span class="lim-head">9月末まで</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">5万円以上</span><span class="off">2,500円OFF</span><span class="lim">5,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">4万円以上</span><span class="off">2,000円OFF</span><span class="lim">4,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">3万円以上</span><span class="off">1,500円OFF</span><span class="lim">3,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">2万円以上</span><span class="off">1,000円OFF</span><span class="lim">2,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">1万円以上</span><span class="off">500円OFF</span><span class="lim">1,000円OFF</span>
+        </div>
+      </div>
+
+      <p class="note ladder-note">※「9月末まで」は期間限定の増額分です。期間終了後は割引額の欄が適用されます。</p>
+    </div>
+
+    <div class="rentacar">
+      <div class="rentacar-head-row">
+        <img src="images/car.png" alt="" class="rentacar-icon">
+        <p class="rentacar-head">着いたあとの、足も。</p>
+      </div>
+      <div class="coupon-brands">
+        <span class="coupon-brand">オリックスレンタカー <span class="off">10〜25%OFF</span></span>
+        <span class="coupon-brand">日産レンタカー <span class="off">会員特別価格</span></span>
+      </div>
+      <p class="rentacar-copy">航空券とホテルはエアトリ、現地の移動はレンタカー割引で。旅行の主要な出費に、そのまま効きます。</p>
+    </div>
+
+    <p class="note">※割引額はご利用金額に応じて変動します。詳細は特典ページをご確認ください。</p>
   </section>
 
   <!-- ============ SIMULATION ============ -->
@@ -1710,92 +1796,6 @@
     </div>
 
     <p class="apps-extra">ほかにも<strong>歩数計アプリ</strong>、スマホ電池長持ちアプリ、スマホ管理・最適化アプリなど、日常を支える便利アプリが多数。</p>
-  </section>
-
-  <!-- ============ エアトリ ============ -->
-  <section class="airtri" aria-labelledby="airtri-title">
-    <span class="sec-label">旅行・おでかけ</span>
-    <h2 class="sec-title" id="airtri-title">旅行も、帰省も。<br><span class="accent">ここで一気に元が取れる</span></h2>
-
-    <div class="airtri-hero">
-      <div class="airtri-photo-wrap">
-        <img src="images/travel.jpg" alt="空港でスーツケースを引く旅行者" class="airtri-photo">
-      </div>
-      <p class="airtri-amount">エアトリで<span class="num"><span class="jp">最大</span>40,000<span class="jp">円OFF</span></span></p>
-      <div class="airtri-scenes">
-        <span class="airtri-scene">家族旅行</span>
-        <span class="airtri-scene">週末の小旅行</span>
-        <span class="airtri-scene">年末年始の帰省</span>
-      </div>
-      <p class="airtri-copy">国内航空券＋ホテルのセット予約で、ご利用金額に応じて最大40,000円の割引。飛行機に乗る予定が年に1回でもあるなら、それだけで1年分の月額（6,600円）を大きく上回るリターンになります。</p>
-    </div>
-
-    <!-- ▼ 割引ラダー -->
-    <div class="ladder">
-      <p class="ladder-lead">割引額は、購入金額に応じて決まります。</p>
-
-      <div class="ladder-block">
-        <p class="ladder-title">国内航空券＋ホテル</p>
-        <div class="ladder-head">
-          <span>購入金額</span>
-          <span>割引額</span>
-          <!-- 【期間限定】10月以降は class="has-limited" を外し、.lim の中身を削除 -->
-          <span class="lim-head">9月末まで</span>
-        </div>
-        <div class="ladder-row top">
-          <span class="amt">40万円以上</span><span class="off">40,000円OFF</span><span class="lim"></span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">30万円以上</span><span class="off">30,000円OFF</span><span class="lim"></span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">20万円以上</span><span class="off">10,000円OFF</span><span class="lim"></span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">10万円以上</span><span class="off">3,000円OFF</span><span class="lim">6,000円OFF</span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">10万円未満</span><span class="off">2,000円OFF</span><span class="lim">4,000円OFF</span>
-        </div>
-      </div>
-
-      <div class="ladder-block">
-        <p class="ladder-title">国内ホテル</p>
-        <div class="ladder-head">
-          <span>購入金額</span>
-          <span>割引額</span>
-          <span class="lim-head">9月末まで</span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">5万円以上</span><span class="off">2,500円OFF</span><span class="lim">5,000円OFF</span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">4万円以上</span><span class="off">2,000円OFF</span><span class="lim">4,000円OFF</span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">3万円以上</span><span class="off">1,500円OFF</span><span class="lim">3,000円OFF</span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">2万円以上</span><span class="off">1,000円OFF</span><span class="lim">2,000円OFF</span>
-        </div>
-        <div class="ladder-row">
-          <span class="amt">1万円以上</span><span class="off">500円OFF</span><span class="lim">1,000円OFF</span>
-        </div>
-      </div>
-
-      <p class="note ladder-note">※「9月末まで」は期間限定の増額分です。期間終了後は割引額の欄が適用されます。</p>
-    </div>
-
-    <div class="rentacar">
-      <p class="rentacar-head">着いたあとの、足も。</p>
-      <div class="coupon-brands">
-        <span class="coupon-brand">オリックスレンタカー <span class="off">10〜25%OFF</span></span>
-        <span class="coupon-brand">日産レンタカー <span class="off">会員特別価格</span></span>
-      </div>
-      <p class="rentacar-copy">航空券とホテルはエアトリ、現地の移動はレンタカー割引で。旅行の主要な出費に、そのまま効きます。</p>
-    </div>
-
-    <p class="note">※割引額はご利用金額に応じて変動します。詳細は特典ページをご確認ください。</p>
   </section>
 
   <!-- ============ dアカウント ============ -->
