@@ -885,6 +885,65 @@
   }
   .rentacar-copy { font-size: 13px; color: var(--ink-soft); line-height: 1.9; }
 
+  .ladder { margin-top: 14px; }
+  .ladder-lead {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 12px;
+  }
+  .ladder-block {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+    overflow: hidden;
+    background: white;
+    margin-bottom: 10px;
+  }
+  .ladder-title {
+    background: var(--charge-dark);
+    color: white;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 14px;
+  }
+  .ladder-head, .ladder-row {
+    display: grid;
+    grid-template-columns: 5.4em 1fr 1fr;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 14px;
+    text-align: right;
+  }
+  .ladder-head {
+    background: var(--bg-alt);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+  .ladder-head span:first-child { text-align: left; }
+  .ladder-head .lim-head { color: var(--red); }
+  .ladder-row {
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .ladder-row .amt { text-align: left; font-weight: 500; font-size: 12px; }
+  .ladder-row .off { font-weight: 900; }
+  .ladder-row.top { background: #fffbe8; }
+  .ladder-row.top .off { color: var(--red); font-size: 15px; }
+  .ladder-row .lim {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 12px;
+    color: white;
+    background: var(--red);
+    border-radius: 5px;
+    padding: 4px 0;
+    text-align: center;
+  }
+  .ladder-row .lim:empty { background: transparent; }
+  .ladder-note { margin-top: 8px; }
+
   /* ============ dアカウント ============ */
   .daccount { background: var(--bg); }
   .daccount-card {
@@ -1669,6 +1728,62 @@
         <span class="airtri-scene">年末年始の帰省</span>
       </div>
       <p class="airtri-copy">国内航空券＋ホテルのセット予約で、ご利用金額に応じて最大40,000円の割引。飛行機に乗る予定が年に1回でもあるなら、それだけで1年分の月額（6,600円）を大きく上回るリターンになります。</p>
+    </div>
+
+    <!-- ▼ 割引ラダー -->
+    <div class="ladder">
+      <p class="ladder-lead">割引額は、購入金額に応じて決まります。</p>
+
+      <div class="ladder-block">
+        <p class="ladder-title">国内航空券＋ホテル</p>
+        <div class="ladder-head">
+          <span>購入金額</span>
+          <span>割引額</span>
+          <!-- 【期間限定】10月以降は class="has-limited" を外し、.lim の中身を削除 -->
+          <span class="lim-head">9月末まで</span>
+        </div>
+        <div class="ladder-row top">
+          <span class="amt">40万円以上</span><span class="off">40,000円OFF</span><span class="lim"></span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">30万円以上</span><span class="off">30,000円OFF</span><span class="lim"></span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">20万円以上</span><span class="off">10,000円OFF</span><span class="lim"></span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">10万円以上</span><span class="off">3,000円OFF</span><span class="lim">6,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">10万円未満</span><span class="off">2,000円OFF</span><span class="lim">4,000円OFF</span>
+        </div>
+      </div>
+
+      <div class="ladder-block">
+        <p class="ladder-title">国内ホテル</p>
+        <div class="ladder-head">
+          <span>購入金額</span>
+          <span>割引額</span>
+          <span class="lim-head">9月末まで</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">5万円以上</span><span class="off">2,500円OFF</span><span class="lim">5,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">4万円以上</span><span class="off">2,000円OFF</span><span class="lim">4,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">3万円以上</span><span class="off">1,500円OFF</span><span class="lim">3,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">2万円以上</span><span class="off">1,000円OFF</span><span class="lim">2,000円OFF</span>
+        </div>
+        <div class="ladder-row">
+          <span class="amt">1万円以上</span><span class="off">500円OFF</span><span class="lim">1,000円OFF</span>
+        </div>
+      </div>
+
+      <p class="note ladder-note">※「9月末まで」は期間限定の増額分です。期間終了後は割引額の欄が適用されます。</p>
     </div>
 
     <div class="rentacar">
